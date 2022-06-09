@@ -92,8 +92,77 @@ button img {
   border-radius: 3px;
   text-align: center;
   padding-top: 6px;
+  position: relative;
 }
+
+.password-result i {
+  position: absolute;
+  right: 0;
+}
+
+/* .fa-clipboard {
+  font-size: 30px;
+} */
 
 input:focus {
   outline: none;
+}
+
+.dot-img {
+  text-align: center;
+  width: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    display: block;
+    background: #1f2937;
+  }
+
+  #password-generator-form {
+    height: 550px;
+    width: 550px;
+    background: #1f2937;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    display: block;
+  }
+
+  #password-generator-form {
+    height: 800px;
+    width: 100%;
+    background: #1f2937;
+  }
+
+  .pw-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showcase-text {
+    padding: 0;
+    text-align: center;
+  }
+
+  .showcase-text h1 {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    padding-top: 3rem;
+    font-size: 32px;
+  }
+  button {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .showcase-text p {
+    font-size: 15px;
+  }
 }
