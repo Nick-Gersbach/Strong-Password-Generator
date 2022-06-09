@@ -8,101 +8,26 @@
 //Implement a one click copy password to clipboard feature (requires using an input for each password field)
 
 //DOM Elements
-let passwordResult = document.querySelector(".password-result");
+
 let passwordForm = document.getElementById("password-generator-form");
-let passwordBtn = document.querySelector("#get-password-btn");
-let passwordChars = [
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  "Q",
-  "W",
-  "E",
-  "R",
-  "T",
-  "Y",
-  "U",
-  "I",
-  "O",
-  "P",
-  "A",
-  "S",
-  "D",
-  "F",
-  "G",
-  "H",
-  "J",
-  "K",
-  "L",
-  "Z",
-  "X",
-  "C",
-  "V",
-  "B",
-  "N",
-  "M",
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "(",
-  ")",
-  "q",
-  "w",
-  "r",
-  "t",
-  "y",
-  "u",
-  "i",
-  "o",
-  "p",
-  "a",
-  "s",
-  "d",
-  "f",
-  "g",
-  "h",
-  "j",
-  "k",
-  "l",
-  "z",
-  "x",
-  "c",
-  "v",
-  "b",
-  "n",
-  "m",
-  "<",
-  ">",
-  "?",
-];
+let passwordInput1 = document.getElementById("password-1");
+let passwordInput2 = document.getElementById("password-2");
+let passwordInput3 = document.getElementById("password-3");
+let passwordInput4 = document.getElementById("password-4");
 
 //Event Listeners
-passwordForm.addEventListener("submit", createPasswords);
-
-//Populate all password fields
-
-function renderPasswords() {
-  let randomChar = Math.floor(Math.random() * 75 + 1);
-  passwordResult.textContent = passwordChars[randomChar];
-}
-
-renderPasswords();
+passwordForm.addEventListener("submit", createPassword);
 
 //Submit form and populate password inputs when button is clicked
-function createPasswords(e) {
+function createPassword(e) {
   e.preventDefault();
-  renderPasswords();
-  console.log("form submitted");
+  let password = (Math.random() + 1).toString(36).substring(2);
+  let password2 = (Math.random() + 1).toString(36).substring(2);
+  let password3 = (Math.random() + 1).toString(36).substring(2);
+  let password4 = (Math.random() + 1).toString(36).substring(2);
+  passwordInput1.textContent = password;
+  passwordInput2.textContent = password2;
+  passwordInput3.textContent = password3;
+  passwordInput4.textContent = password4;
+  return password;
 }
